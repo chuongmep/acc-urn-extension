@@ -1,0 +1,56 @@
+.container {
+    min-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.input-field {
+    margin-bottom: 20px;
+}
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+.info-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.info-box p {
+    margin: 5px 0;
+}
+.copy-button {
+    font-size: 12px; 
+    margin-left: 5px; 
+}
+
+.info-item {
+    margin-bottom: 10px;
+}
+
+.info-item label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.info-item button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 6px;
+    cursor: pointer;
+}
+
+.info-item button:hover {
+    background-color: #0056b3;
+}
