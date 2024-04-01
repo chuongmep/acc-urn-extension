@@ -5,10 +5,9 @@
     "description": "Get Detail ACC URL",
     "permissions": ["tabs"],
     "background": {
-      "scripts": ["popup.js"],
-      "persistent": false
+      "scripts": ["popup.js"]
     },
-    "browser_action": {
+    "action": {
       "default_popup": "popup.html",
       "default_icon": {
         "16": "icon.png",
@@ -18,11 +17,7 @@
     },
     "icons": {
       "48": "icon.png"
-    },
-    "applications": {
-      "gecko": {
-        "id": "chuongpqvn@gmail.com"
-      }
     }
+  
   }
   
