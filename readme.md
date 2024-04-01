@@ -1,6 +1,6 @@
 ## APS ACC URL Details
 
-[![Watch the video](./docs/firefox_2HDrgBUFOh.png)](./docs/firefox_P2JntgcXSn.mp4)
+<video controls src="https://raw.githubusercontent.com/chuongmep/acc-urn-extension/master/docs/firefox_P2JntgcXSn.mp4" title="./docs/firefox_P2JntgcXSn.mp4"></video>
 
 This is a simple extension allows you to get the APS ACC URL details include: 
 
