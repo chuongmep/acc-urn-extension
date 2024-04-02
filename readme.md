@@ -9,7 +9,15 @@ This is a simple extension allows you to get the APS ACC URL details include:
 - Entity Id : The entity id of the APS ACC URL
 - Model View Id : The model view id of the APS ACC URL
 
-## Firefox
+## Installation
+
+- Chrome / Edge: Install From [Chrome Store](https://chromewebstore.google.com/detail/url-details-acc-extension/jjjpiegllaokfphbppbfenphdfmdhbjc)
+
+- Firefox : TODO
+
+## Development
+
+### Firefox
 
 - Manual Install :
     - Clone the repository
@@ -21,7 +29,7 @@ This is a simple extension allows you to get the APS ACC URL details include:
 
 - Addon Online Store : [URL Details](https://addons.mozilla.org/en-US/firefox/addon/url-details-acc/)
 
-## Chrome / Edge
+### Chrome / Edge
 
 - Manual Install :
     - Clone the repository
