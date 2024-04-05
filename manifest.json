@@ -5,7 +5,7 @@
     "description": "Get Detail ACC URL",
     "permissions": ["tabs","scripting"],
     "background": {
-      "scripts": ["popup.js"]
+      "scripts": ["popup.js","script.js"]
     },
     "action": {
       "default_popup": "popup.html",

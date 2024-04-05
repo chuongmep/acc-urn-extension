@@ -1,5 +1,9 @@
+
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById("infoOutput").style.display = "none";
+    let output = document.getElementById("infoOutput");
+    if (output) {
+        output.style.display = "none";
+    }
     document.getElementById("btn").addEventListener("click", fetchCurrentTabInfo);
 });
 
@@ -40,7 +44,8 @@ function generateOutput(project_id, folder_urn, entity_id, viewable_guid) {
     output += "<div class='info-item'><label>Folder URN:</label> " + folder_urn + "<button class='copy-button' data-value='" + folder_urn + "'>Copy</button></div>";
     output += "<div class='info-item'><label>Entity ID:</label> " + entity_id + "<button class='copy-button' data-value='" + entity_id + "'>Copy</button></div>";
     output += "<div class='info-item'><label>Viewable GUID:</label> " + viewable_guid + "<button class='copy-button' data-value='" + viewable_guid + "'>Copy</button></div>";
-    document.getElementById("infoOutput").innerHTML = output;
+    let infoOutput = document.getElementById("infoOutput");
+    infoOutput.innerHTML = output;
     infoOutput.innerHTML = output;
     infoOutput.style.display = "block";
     return output;
