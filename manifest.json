@@ -3,7 +3,7 @@
     "name": "URL Details ACC Extension",
     "version": "1.2",
     "description": "Get Detail ACC URL",
-    "permissions": ["tabs"],
+    "permissions": ["tabs","scripting"],
     "background": {
       "scripts": ["popup.js"]
     },
