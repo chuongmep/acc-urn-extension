@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("infoOutput").style.display = "none";
     document.getElementById("btn").addEventListener("click", fetchCurrentTabInfo);
-    console.log(window.NOP_VIEWER);
 });
 
 function fetchCurrentTabInfo() {
