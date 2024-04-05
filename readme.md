@@ -4,12 +4,21 @@
 
 This is a simple extension allows you to get the APS ACC URL details include: 
 
-- Project Id : The project id of the APS ACC URL
-- Folder Urn : The folder urn of the APS ACC URL
-- Entity Id : The entity id of the APS ACC URL
-- Model View Id : The model view id of the APS ACC URL
+- Project Id : A Project in Autodesk Forge is a specific workspace within a Hub. It's where the actual design and construction data is stored. Each project contains folders, items, and versions. The project id is unique for each project within a hub.
 
-## Firefox
+- Folder Urn : The folder urn is the unique identifier for a folder in a project. It is used to identify the folder in the project.
+- Entity Id : The entity id is the unique identifier for an entity in a folder. It is used to identify the entity/item in the folder.
+- Model View Id : The model view id is the unique identifier for a model view in a folder. It is used to identify the model view in the folder.
+
+## Installation
+
+- Chrome / Edge: Install From [Chrome Store](https://chromewebstore.google.com/detail/url-details-acc-extension/jjjpiegllaokfphbppbfenphdfmdhbjc)
+
+- Firefox : TODO
+
+## Development
+
+### Firefox
 
 - Manual Install :
     - Clone the repository
@@ -21,7 +30,7 @@ This is a simple extension allows you to get the APS ACC URL details include:
 
 - Addon Online Store : [URL Details](https://addons.mozilla.org/en-US/firefox/addon/url-details-acc/)
 
-## Chrome / Edge
+### Chrome / Edge
 
 - Manual Install :
     - Clone the repository
