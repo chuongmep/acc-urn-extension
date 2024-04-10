@@ -14,7 +14,7 @@ This is a simple extension allows you to get the APS ACC URL details include:
 
 - Chrome / Edge: Install From [Chrome Store](https://chromewebstore.google.com/detail/url-details-acc-extension/jjjpiegllaokfphbppbfenphdfmdhbjc)
 
-- Firefox : TODO
+- Firefox Install From [Firefox Store](https://addons.mozilla.org/en-US/firefox/addon/url-details-acc/)
 
 ## Development
 
