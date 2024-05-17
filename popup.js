@@ -71,7 +71,9 @@ function isBIM360Url(url) {
 }
 
 function isAccUrl(url) {
-    return url.includes("acc.autodesk.com");
+    // return url.includes("acc.autodesk.com");
+    // add acc.autodesk.eu
+    return url.includes("acc.autodesk");
 }
 
 
