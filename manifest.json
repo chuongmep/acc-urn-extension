@@ -1,30 +1,56 @@
 {
-    "manifest_version": 3,
-    "name": "URL Details ACC Extension",
-    "version": "1.3",
-    "description": "Get Detail ACC URL",
-    "permissions": ["tabs","scripting"],
-    "background": {
-      "scripts": ["popup.js","script.js"]
-    },
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icon.png",
-        "48": "icon.png",
-        "128": "icon.png"
-      }
-    },
-    "icons": {
-      "48": "icon.png"
-    },
-    "browser_specific_settings": {
-      "gecko": {
-        "id": "chuongpqvn@gmail.com",
-        "strict_min_version": "42.0"
-      }
+  "manifest_version": 3,
+  "name": "URL Details ACC Extension",
+  "version": "1.3",
+  "description": "Get Detail ACC URL",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": [
+      "popup.js"
+    ]
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
     }
-    
-  
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "popup.js",
+        "contentScript.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "script.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "chuongpqvn@gmail.com",
+      "strict_min_version": "42.0"
+    }
   }
-  
+}
