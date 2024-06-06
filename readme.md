@@ -38,6 +38,7 @@ This is a simple extension allows you to get the APS ACC URL details include:
     - Click on `Load unpacked`
     - Select the cloned repository
     - The extension will be installed and you can see the icon in the toolbar
+    - Restart the browser
     - Open ACC Project and click on the icon to get the URL details
 
 - Addon Online Store : [URL Details](...)
