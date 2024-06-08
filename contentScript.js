@@ -26,3 +26,20 @@ window.addEventListener("message", function(event) {
         chrome.runtime.sendMessage({urn: urn});
     }
 });
+
+// Repeat the same for fetching the token
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    if (message.action === "fetchToken") {
+        console.log("Popup requested Token, forwarding to page script.");
+        window.postMessage({type: "fetchToken"}, "*");
+    }
+});
+window.addEventListener("message", function(event) {
+    if (event.source !== window) return;
+
+    if (event.data.type === "sendToken") {
+        const token = event.data.token;
+        console.log("Received Token from page script:", token);
+        chrome.runtime.sendMessage({token: token});
+    }
+});
