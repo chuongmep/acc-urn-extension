@@ -62,7 +62,7 @@ function fetchCurrentTabInfo() {
 
 function fetchInfo(url) {
 
-    let project_id = url.match(/projects\/([^\/?#]+)/)?.[1] || '';
+    let project_id = "b."+ url.match(/projects\/([^\/?#]+)/)?.[1] || '';
     let urlParams = new URLSearchParams(url.split('?')[1] || '');
     let folder_urn = urlParams.get('folderUrn') || '';
     let entity_id = urlParams.get('entityId') || '';
