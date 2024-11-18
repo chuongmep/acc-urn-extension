@@ -65,10 +65,10 @@ function fetchInfo(url) {
     let project_id = "b."+ url.match(/projects\/([^\/?#]+)/)?.[1] || '';
     let urlParams = new URLSearchParams(url.split('?')[1] || '');
     let folder_urn = urlParams.get('folderUrn') || '';
-    let entity_id = urlParams.get('entityId') || '';
+    let version_id = urlParams.get('entityId') || '';
     let viewable_guid = urlParams.get('viewableGuid') || '';
 
-    generateOutput(project_id, folder_urn, entity_id, viewable_guid)
+    generateOutput(project_id, folder_urn, version_id, viewable_guid)
 
     document.querySelectorAll('.copy-button').forEach(button => {
         button.addEventListener('click', function () {
@@ -77,14 +77,16 @@ function fetchInfo(url) {
     });
 }
 
-function generateOutput(project_id, folder_urn, entity_id, viewable_guid) {
+function generateOutput(project_id, folder_urn, version_id, viewable_guid) {
     devaritiveUrn = localStorage.getItem("devaritiveUrn");
     token = localStorage.getItem("token");
+    item_id = version_id.split("?")[0];
     let output = "<div class='info-item'><label>Project ID:</label> " + project_id + "<button class='copy-button' data-value='" + project_id + "'>Copy</button></div>";
     output += "<div class='info-item'><label>Folder URN:</label> " + folder_urn + "<button class='copy-button' data-value='" + folder_urn + "'>Copy</button></div>";
-    output += "<div class='info-item'><label>Entity ID:</label> " + entity_id + "<button class='copy-button' data-value='" + entity_id + "'>Copy</button></div>";
-    output += "<div class='info-item'><label>Viewable GUID:</label> " + viewable_guid + "<button class='copy-button' data-value='" + viewable_guid + "'>Copy</button></div>";
-    output += "<div class='info-item'><label>URN:</label> " + devaritiveUrn.substring(0,51) + "..." + "<button class='copy-button' data-value='" + devaritiveUrn + "'>Copy</button></div>";
+    output += "<div class='info-item'><label>Item Id:</label> " + item_id + "<button class='copy-button' data-value='" + item_id + "'>Copy</button></div>";
+    output += "<div class='info-item'><label>Version Id:</label> " + version_id + "<button class='copy-button' data-value='" + version_id + "'>Copy</button></div>";
+    output += "<div class='info-item'><label>Viewable Guid:</label> " + viewable_guid + "<button class='copy-button' data-value='" + viewable_guid + "'>Copy</button></div>";
+    output += "<div class='info-item'><label>Urn:</label> " + devaritiveUrn.substring(0,51) + "..." + "<button class='copy-button' data-value='" + devaritiveUrn + "'>Copy</button></div>";
     output += "<div class='info-item'><label>Token:</label> " + token.substring(0, 51)+"..." + "<button class='copy-button' data-value='" + token + "'>Copy</button></div>";
     let infoOutput = document.getElementById("infoOutput");
     infoOutput.innerHTML = output;
