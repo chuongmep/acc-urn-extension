@@ -5,9 +5,9 @@
 This is a simple extension allows you to get the APS ACC URL details include: 
 
 - Project Id : A Project in Autodesk Forge is a specific workspace within a Hub. It's where the actual design and construction data is stored. Each project contains folders, items, and versions. The project id is unique for each project within a hub.
-
 - Folder Urn : The folder urn is the unique identifier for a folder in a project. It is used to identify the folder in the project.
-- Entity Id : The entity id is the unique identifier for an entity in a folder. It is used to identify the entity/item in the folder.
+- Item Id : The entity id is the unique identifier for an entity in a folder. It is used to identify the entity/item in the folder.
+- Version Id : The version id is the unique identifier for a version of an item. It is used to identify the version of the item in the folder.
 - Model View Id : The model view id is the unique identifier for a model view in a folder. It is used to identify the model view in the folder.
 
 ## Installation
