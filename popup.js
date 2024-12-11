@@ -99,9 +99,13 @@ async function generateOutput(
   if (!modelData) {
     console.log("Failed to fetch modelData.");
     modelData = {};
+    var fullStringModel = "";
+    var shortStringModel = "";
   }
-  var fullStringModel = modelData;
-  var shortStringModel = modelData.substring(0, 51);
+  else{
+    var fullStringModel = modelData;
+    var shortStringModel = modelData.substring(0, 51);
+  }
   // Generate output HTML
   let output = `
         <div class='info-item'><label>Project ID:</label> ${project_id} <button class='copy-button' data-value='${project_id}'>Copy</button></div>
