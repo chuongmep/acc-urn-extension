@@ -100,6 +100,8 @@ async function generateOutput(
     console.log("Failed to fetch modelData.");
     modelData = {};
   }
+  var fullStringModel = modelData;
+  var shortStringModel = modelData.substring(0, 51);
   // Generate output HTML
   let output = `
         <div class='info-item'><label>Project ID:</label> ${project_id} <button class='copy-button' data-value='${project_id}'>Copy</button></div>
@@ -110,7 +112,7 @@ async function generateOutput(
         <div class='info-item'><label>Urn:</label> ${devaritiveUrn.substring(0,51)}... <button class='copy-button' data-value='${devaritiveUrn}'>Copy</button></div>
         <div class='info-item'><label>Token:</label> ${token.substring(0,51)}... <button class='copy-button' data-value='${token}'>Copy</button></div>
         <div class='info-item'><label>Manifest Json:</label> ${JSON.stringify(manifestJson).substring(0,51)}... <button class='copy-button' data-value='${JSON.stringify(manifestJson,null,2)}'>Copy</button></div>
-        <div class='info-item'><label>ModelData Json:</label> ${JSON.stringify(modelData).substring(0,51)}... <button class='copy-button' data-value='${JSON.stringify(modelData,null,2)}'>Copy</button></div>
+        <div class='info-item'><label>ModelData Json:</label> ${shortStringModel}... <button class='download-button' data-value='${fullStringModel}'>Download</button></div>
         `;
 
   // Update the output container
@@ -124,6 +126,25 @@ async function generateOutput(
       copyValue(this.getAttribute("data-value"));
     });
   });
+  document.querySelectorAll(".download-button").forEach((button) => {
+    button.addEventListener("click", function () {
+        downloadAECJsonFile();
+    });
+  });
+}
+function downloadAECJsonFile() {
+    // get from storage and download
+    let modelData = localStorage.getItem("aecModelData");
+    // indend json 2 spaces
+    modelData = JSON.stringify(JSON.parse(modelData), null, 2);
+    let filename = "modelData.json";
+    let blob = new Blob([modelData], { type: "application/json" });
+    let url = URL.createObjectURL(blob);
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    a.click();
+
 }
 
 async function fetchManifestJson(urn, token) {
@@ -164,8 +185,11 @@ async function downloadAECModelUrl(urn, jsonManifest) {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
     let data = await response.json();
-    console.log("AEC Model Data: ", data);
-    return data;
+    // save to local storage
+    localStorage.setItem("aecModelUrl", data.url);
+    localStorage.setItem("aecModelData", JSON.stringify(data));
+    var json_string = JSON.stringify(data);
+    return json_string; // Return the fetched JSON data
 
     //TODO: NEW V2 Not working well : 
     // 1. https://aps.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-manifest-derivativeUrn-signedcookies-GET/
